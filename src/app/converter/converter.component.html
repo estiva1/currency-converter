@@ -1,0 +1,38 @@
+<div class="drawer-container">
+  <h1>Converter</h1>
+  <div class="inner-container">
+    <mat-grid-list cols="2" rowHeight="4:1">
+      <mat-grid-tile
+        ><mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let codes of currentCurrency" [value]="codes.cc">
+                {{ codes.cc }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile
+      >
+      <mat-grid-tile
+        ><mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let codes of currentCurrency" [value]="codes.cc">
+              {{ codes.cc }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile
+      >
+
+      <mat-grid-tile
+        ><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Giving amount</mat-label>
+          <input matInput placeholder="" value="" /> </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile
+        ><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Getting amount</mat-label>
+          <input matInput placeholder="" value="" /> </mat-form-field
+      ></mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

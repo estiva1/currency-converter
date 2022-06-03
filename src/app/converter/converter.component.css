@@ -1,0 +1,36 @@
+.drawer-container {
+  margin-top: 4rem !important;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inner-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.container {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.mat-grid-tile {
+  background: #fff;
+}
