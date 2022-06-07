@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
 };
 
 /*

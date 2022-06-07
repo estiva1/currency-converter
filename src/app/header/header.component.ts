@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +15,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient
-      .get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
+      .get(`${environment.apiUrl}`)
       .subscribe((data) => {
         this.currentCurrency = data;
         this.currentCurrency.find((obj: any) => {
-          if (obj["cc"] === 'USD') {
+          if (obj['cc'] === 'USD') {
             this.usd = obj.rate.toFixed(2);
-          } else if (obj["cc"] === 'EUR') {
-            this.eur = obj["rate"].toFixed(2);
+          } else if (obj['cc'] === 'EUR') {
+            this.eur = obj['rate'].toFixed(2);
           }
         });
       });

@@ -1,38 +1,53 @@
-<div class="drawer-container">
+<div class="outer-container">
   <h1>Converter</h1>
-  <div class="inner-container">
+  <div class="inner-container" [formGroup]="form">
     <mat-grid-list cols="2" rowHeight="4:1">
-      <mat-grid-tile
-        ><mat-form-field appearance="fill">
-          <mat-label>Currency</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let codes of currentCurrency" [value]="codes.cc">
-                {{ codes.cc }}
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="0"
+            formControlName="fromAmount"
+            [value]="form.get('toAmount')?.value * (1 / rate!)"/>
+          </mat-form-field>
+        </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>From</mat-label>
+          <mat-select formControlName="fromCurrency">
+            <mat-option *ngFor="let curr of currencies" [value]="curr"
+              >{{ curr }}
             </mat-option>
           </mat-select>
-        </mat-form-field></mat-grid-tile
-      >
-      <mat-grid-tile
-        ><mat-form-field appearance="fill">
-          <mat-label>Currency</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let codes of currentCurrency" [value]="codes.cc">
-              {{ codes.cc }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field></mat-grid-tile
-      >
+        </mat-form-field>
+      </mat-grid-tile>
 
       <mat-grid-tile
         ><mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Giving amount</mat-label>
-          <input matInput placeholder="" value="" /> </mat-form-field
-      ></mat-grid-tile>
+          <mat-label>Amount</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="0"
+            formControlName="toAmount"
+            [value]="form.get('fromAmount')?.value * rate!"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+
       <mat-grid-tile
-        ><mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Getting amount</mat-label>
-          <input matInput placeholder="" value="" /> </mat-form-field
-      ></mat-grid-tile>
+        ><mat-form-field appearance="fill">
+          <mat-label>To</mat-label>
+          <mat-select formControlName="toCurrency">
+            <mat-option *ngFor="let curr of currencies" [value]="curr"
+              >{{ curr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>
